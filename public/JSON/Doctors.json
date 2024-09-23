@@ -1,0 +1,804 @@
+[
+  {
+    "_id": 1,
+    "name": "Dr. Jane Foster",
+    "expertise": "Dentist",
+    "education": [
+      {
+        "institution": "Harvard School of Dental Medicine",
+        "degree": "DDS",
+        "year": "2002 - 2006"
+      }
+    ],
+    "work_experience": [
+      {
+        "clinic": "Bright Smile Dental",
+        "years": "2010 - Present"
+      },
+      {
+        "clinic": "City Dental Clinic",
+        "years": "2006 - 2010"
+      }
+    ],
+    "services": [
+      "Teeth Whitening",
+      "Root Canal Therapy",
+      "Dental Implants"
+    ],
+    "awards": [
+      {
+        "title": "Top Dentist Award",
+        "date": "2019"
+      }
+    ],
+    "specializations": [
+      "Cosmetic Dentistry",
+      "Oral Surgery"
+    ],
+    "location": "Banani, Dhaka, Bangladesh",
+    "available_on": "Wed, 11 October",
+    "price": "50",
+    "rating": 4.9,
+    "experience": "expert",
+    "image": "https://plus.unsplash.com/premium_photo-1661766718556-13c2efac1388?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "_id": 2,
+    "name": "Dr. Bruce Wayne",
+    "expertise": "Orthodontist",
+    "education": [
+      {
+        "institution": "Gotham University Dental School",
+        "degree": "DDS",
+        "year": "1995 - 1999"
+      }
+    ],
+    "work_experience": [
+      {
+        "clinic": "Wayne Dental",
+        "years": "2000 - Present"
+      }
+    ],
+    "services": [
+      "Braces",
+      "Invisalign",
+      "Teeth Aligners"
+    ],
+    "awards": [
+      {
+        "title": "Excellence in Orthodontics",
+        "date": "2020"
+      }
+    ],
+    "specializations": [
+      "Adult Orthodontics",
+      "Children's Orthodontics"
+    ],
+    "location": "Gulshan, Dhaka, Bangladesh",
+    "available_on": "Thu, 12 October",
+    "price": "70",
+    "rating": 5.0,
+    "experience": "advanced",
+    "image": "https://yourimageurl.com/bruce_wayne.png"
+  },
+  {
+    "_id": 3,
+    "name": "Dr. Clark Kent",
+    "expertise": "Oral Surgeon",
+    "education": [
+      {
+        "institution": "Metropolis University Dental School",
+        "degree": "DDS",
+        "year": "2001 - 2005"
+      }
+    ],
+    "work_experience": [
+      {
+        "clinic": "Super Smile Dental Clinic",
+        "years": "2006 - Present"
+      }
+    ],
+    "services": [
+      "Dental Implants",
+      "Oral Surgery",
+      "Wisdom Teeth Extraction"
+    ],
+    "awards": [
+      {
+        "title": "Best Oral Surgeon",
+        "date": "2018"
+      }
+    ],
+    "specializations": [
+      "Oral and Maxillofacial Surgery",
+      "Implantology"
+    ],
+    "location": "Dhanmondi, Dhaka, Bangladesh",
+    "available_on": "Mon, 9 October",
+    "price": "60",
+    "rating": 4.7,
+    "experience": "intermediate",
+    "image": "https://yourimageurl.com/clark_kent.png"
+  },
+  {
+    "_id": 4,
+    "name": "Dr. Diana Prince",
+    "expertise": "Pediatric Dentist",
+    "education": [
+      {
+        "institution": "Amazon University School of Dentistry",
+        "degree": "DDS",
+        "year": "1998 - 2002"
+      }
+    ],
+    "work_experience": [
+      {
+        "clinic": "Kids Dental World",
+        "years": "2005 - Present"
+      }
+    ],
+    "services": [
+      "Fluoride Treatment",
+      "Sealants",
+      "Pediatric Dentistry"
+    ],
+    "awards": [
+      {
+        "title": "Best Pediatric Dentist",
+        "date": "2021"
+      }
+    ],
+    "specializations": [
+      "Children's Oral Health",
+      "Preventive Care"
+    ],
+    "location": "Uttara, Dhaka, Bangladesh",
+    "available_on": "Tue, 10 October",
+    "price": "40",
+    "rating": 4.8,
+    "experience": "intermediate",
+    "image": "https://yourimageurl.com/diana_prince.png"
+  },
+  {
+    "_id": 5,
+    "name": "Dr. Peter Parker",
+    "expertise": "Endodontist",
+    "education": [
+      {
+        "institution": "New York Dental School",
+        "degree": "DDS",
+        "year": "2005 - 2009"
+      }
+    ],
+    "work_experience": [
+      {
+        "clinic": "Parker Endodontics",
+        "years": "2010 - Present"
+      }
+    ],
+    "services": [
+      "Root Canal Therapy",
+      "Apicoectomy",
+      "Pulpotomy"
+    ],
+    "awards": [
+      {
+        "title": "Outstanding Endodontist",
+        "date": "2017"
+      }
+    ],
+    "specializations": [
+      "Root Canal Treatments",
+      "Endodontic Surgery"
+    ],
+    "location": "Mohammadpur, Dhaka, Bangladesh",
+    "available_on": "Fri, 13 October",
+    "price": "50",
+    "rating": 4.6,
+    "experience": "intermediate",
+    "image": "https://yourimageurl.com/peter_parker.png"
+  },
+  {
+    "_id": 6,
+    "name": "Dr. Tony Stark",
+    "expertise": "Prosthodontist",
+    "education": [
+      {
+        "institution": "MIT School of Dentistry",
+        "degree": "DDS",
+        "year": "1993 - 1997"
+      }
+    ],
+    "work_experience": [
+      {
+        "clinic": "Stark Smile Innovations",
+        "years": "1999 - Present"
+      }
+    ],
+    "services": [
+      "Dental Crowns",
+      "Dentures",
+      "Bridges"
+    ],
+    "awards": [
+      {
+        "title": "Innovative Prosthodontist Award",
+        "date": "2016"
+      }
+    ],
+    "specializations": [
+      "Reconstructive Dentistry",
+      "Dental Prosthetics"
+    ],
+    "location": "Bashundhara, Dhaka, Bangladesh",
+    "available_on": "Sun, 8 October",
+    "price": "80",
+    "rating": 4.9,
+    "experience": "expert",
+    "image":"https://plus.unsplash.com/premium_photo-1681996484614-6afde0d53071?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "_id": 7,
+    "name": "Dr. Natasha Romanoff",
+    "expertise": "Periodontist",
+    "education": [
+      {
+        "institution": "Moscow State Dental University",
+        "degree": "DDS",
+        "year": "2000 - 2004"
+      }
+    ],
+    "work_experience": [
+      {
+        "clinic": "Romanoff Dental Care",
+        "years": "2005 - Present"
+      }
+    ],
+    "services": [
+      "Gum Disease Treatment",
+      "Dental Implants",
+      "Scaling and Root Planing"
+    ],
+    "awards": [
+      {
+        "title": "Excellence in Periodontics",
+        "date": "2019"
+      }
+    ],
+    "specializations": [
+      "Periodontal Disease",
+      "Implant Dentistry"
+    ],
+    "location": "Mirpur, Dhaka, Bangladesh",
+    "available_on": "Mon, 9 October",
+    "price": "60",
+    "rating": 4.7,
+    "experience": "intermediate",
+    "image": "https://yourimageurl.com/natasha_romanoff.png"
+  },
+  {
+    "_id": 8,
+    "name": "Dr. Stephen Strange",
+    "expertise": "Maxillofacial Surgeon",
+    "education": [
+      {
+        "institution": "New York School of Dentistry",
+        "degree": "DDS",
+        "year": "1995 - 1999"
+      },
+      {
+        "institution": "Sorbonne University",
+        "degree": "MDS",
+        "year": "2000 - 2003"
+      }
+    ],
+    "work_experience": [
+      {
+        "clinic": "Strange Maxillofacial Clinic",
+        "years": "2005 - Present"
+      }
+    ],
+    "services": [
+      "Jaw Surgery",
+      "Dental Implants",
+      "Facial Trauma Treatment"
+    ],
+    "awards": [
+      {
+        "title": "Top Maxillofacial Surgeon",
+        "date": "2020"
+      }
+    ],
+    "specializations": [
+      "Maxillofacial Surgery",
+      "Oral Surgery"
+    ],
+    "location": "Dhanmondi, Dhaka, Bangladesh",
+    "available_on": "Tue, 10 October",
+    "price": "100",
+    "rating": 5.0,
+    "experience": "advanced",
+    "image": "https://yourimageurl.com/stephen_strange.png"
+  },
+  {
+    "_id": 9,
+    "name": "Dr. Barry Allen",
+    "expertise": "Orthodontist",
+    "education": [
+      {
+        "institution": "Central City Dental School",
+        "degree": "DDS",
+        "year": "2010 - 2014"
+      }
+    ],
+    "work_experience": [
+      {
+        "clinic": "Fast Braces Clinic",
+        "years": "2015 - Present"
+      }
+    ],
+    "services": [
+      "Braces",
+      "Invisalign",
+      "Teeth Alignment"
+    ],
+    "awards": [
+      {
+        "title": "Top Orthodontist Award",
+        "date": "2022"
+      }
+    ],
+    "specializations": [
+      "Adult Orthodontics",
+      "Braces and Aligners"
+    ],
+    "location": "Gulshan, Dhaka, Bangladesh",
+    "available_on": "Wed, 11 October",
+    "price": "55",
+    "rating": 4.8,
+    "experience": "intermediate",
+    "image": "https://yourimageurl.com/barry_allen.png"
+  },
+  {
+    "_id": 10,
+    "name": "Dr. Steve Rogers",
+    "expertise": "General Dentist",
+    "education": [
+      {
+        "institution": "Brooklyn Dental School",
+        "degree": "DDS",
+        "year": "1990 - 1994"
+      }
+    ],
+    "work_experience": [
+      {
+        "clinic": "Rogers Family Dental",
+        "years": "1995 - Present"
+      }
+    ],
+    "services": [
+      "Teeth Cleaning",
+      "Cavity Fillings",
+      "Dental Examinations"
+    ],
+    "awards": [
+      {
+        "title": "Best General Dentist",
+        "date": "2018"
+      }
+    ],
+    "specializations": [
+      "Preventive Care",
+      "Family Dentistry"
+    ],
+    "location": "Bashundhara, Dhaka, Bangladesh",
+    "available_on": "Thu, 12 October",
+    "price": "45",
+    "rating": 4.7,
+    "experience": "advanced",
+    "image": "https://yourimageurl.com/steve_rogers.png"
+  },
+  {
+    "_id": 11,
+    "name": "Dr. T'Challa",
+    "expertise": "Oral Surgeon",
+    "education": [
+      {
+        "institution": "Wakanda University Dental School",
+        "degree": "DDS",
+        "year": "2005 - 2009"
+      }
+    ],
+    "work_experience": [
+      {
+        "clinic": "Panther Oral Surgery Center",
+        "years": "2010 - Present"
+      }
+    ],
+    "services": [
+      "Dental Implants",
+      "Oral Surgery",
+      "Facial Reconstruction"
+    ],
+    "awards": [
+      {
+        "title": "Best Oral Surgeon",
+        "date": "2021"
+      }
+    ],
+    "specializations": [
+      "Oral Surgery",
+      "Implantology"
+    ],
+    "location": "Mirpur, Dhaka, Bangladesh",
+    "available_on": "Mon, 9 October",
+    "price": "65",
+    "rating": 4.9,
+    "experience": "advanced",
+    "image": "https://yourimageurl.com/tchalla.png"
+  },
+  {
+    "_id": 12,
+    "name": "Dr. Carol Danvers",
+    "expertise": "Cosmetic Dentist",
+    "education": [
+      {
+        "institution": "Air Force Dental School",
+        "degree": "DDS",
+        "year": "1999 - 2003"
+      }
+    ],
+    "work_experience": [
+      {
+        "clinic": "Captain Smile Cosmetic Dentistry",
+        "years": "2005 - Present"
+      }
+    ],
+    "services": [
+      "Teeth Whitening",
+      "Veneers",
+      "Cosmetic Bonding"
+    ],
+    "awards": [
+      {
+        "title": "Top Cosmetic Dentist",
+        "date": "2020"
+      }
+    ],
+    "specializations": [
+      "Smile Makeovers",
+      "Cosmetic Dental Procedures"
+    ],
+    "location": "Gulshan, Dhaka, Bangladesh",
+    "available_on": "Fri, 13 October",
+    "price": "75",
+    "rating": 4.8,
+    "experience": "advanced",
+    "image": "https://yourimageurl.com/carol_danvers.png"
+  },
+  {
+    "_id": 13,
+    "name": "Dr. Wade Wilson",
+    "expertise": "Oral Pathologist",
+    "education": [
+      {
+        "institution": "Merc with a Mouth Dental University",
+        "degree": "DDS",
+        "year": "2003 - 2007"
+      }
+    ],
+    "work_experience": [
+      {
+        "clinic": "Deadpool Oral Pathology Center",
+        "years": "2009 - Present"
+      }
+    ],
+    "services": [
+      "Oral Cancer Screening",
+      "Biopsy",
+      "Oral Lesion Treatment"
+    ],
+    "awards": [
+      {
+        "title": "Outstanding Oral Pathologist",
+        "date": "2018"
+      }
+    ],
+    "specializations": [
+      "Oral Cancer Detection",
+      "Oral Pathology"
+    ],
+    "location": "Banani, Dhaka, Bangladesh",
+    "available_on": "Tue, 10 October",
+    "price": "50",
+    "rating": 4.6,
+    "experience": "intermediate",
+    "image": "https://yourimageurl.com/wade_wilson.png"
+  },
+  {
+    "_id": 14,
+    "name": "Dr. Wanda Maximoff",
+    "expertise": "Pediatric Dentist",
+    "education": [
+      {
+        "institution": "Sokovia Dental School",
+        "degree": "DDS",
+        "year": "2001 - 2005"
+      }
+    ],
+    "work_experience": [
+      {
+        "clinic": "Maximoff Pediatric Dentistry",
+        "years": "2006 - Present"
+      }
+    ],
+    "services": [
+      "Fluoride Treatments",
+      "Sealants",
+      "Preventive Dentistry"
+    ],
+    "awards": [
+      {
+        "title": "Best Pediatric Dentist",
+        "date": "2019"
+      }
+    ],
+    "specializations": [
+      "Children's Dentistry",
+      "Preventive Dental Care"
+    ],
+    "location": "Uttara, Dhaka, Bangladesh",
+    "available_on": "Wed, 11 October",
+    "price": "45",
+    "rating": 4.8,
+    "experience": "intermediate",
+    "image": "https://yourimageurl.com/wanda_maximoff.png"
+  },
+  {
+    "_id": 15,
+    "name": "Dr. Scott Lang",
+    "expertise": "Dentist",
+    "education": [
+      {
+        "institution": "American Dental Medical University",
+        "degree": "BDS",
+        "year": "1998 - 2003"
+      },
+      {
+        "institution": "American Dental Medical University",
+        "degree": "MDS",
+        "year": "2003 - 2005"
+      }
+    ],
+    "work_experience": [
+      {
+        "clinic": "Glowing Smiles Family Dental Clinic",
+        "years": "2010 - Present"
+      },
+      {
+        "clinic": "Comfort Care Dental Clinic",
+        "years": "2007 - 2010"
+      },
+      {
+        "clinic": "Dream Smile Dental Practice",
+        "years": "2005 - 2007"
+      }
+    ],
+    "services": [
+      "Tooth Cleaning",
+      "Root Canal Therapy",
+      "Implants"
+    ],
+    "awards": [
+      {
+        "title": "Humanitarian Award",
+        "date": "2019"
+      }
+    ],
+    "specializations": [
+      "Children's Dental Care",
+      "Oral Surgery"
+    ],
+    "location": "Mirpur, Dhaka, Bangladesh",
+    "available_on": "Mon, 9 October",
+    "price": "40",
+    "rating": 4.8,
+    "experience": "intermediate",
+    "image": "https://yourimageurl.com/scott_lang.png"
+  },
+  {
+    "_id": 16,
+    "name": "Dr. Sam Wilson",
+    "expertise": "Prosthodontist",
+    "education": [
+      {
+        "institution": "Falcon Dental School",
+        "degree": "DDS",
+        "year": "2000 - 2004"
+      }
+    ],
+    "work_experience": [
+      {
+        "clinic": "Wilson Prosthodontics",
+        "years": "2005 - Present"
+      }
+    ],
+    "services": [
+      "Dental Crowns",
+      "Bridges",
+      "Dentures"
+    ],
+    "awards": [
+      {
+        "title": "Best Prosthodontist",
+        "date": "2021"
+      }
+    ],
+    "specializations": [
+      "Prosthetic Dentistry",
+      "Crown & Bridge"
+    ],
+    "location": "Bashundhara, Dhaka, Bangladesh",
+    "available_on": "Thu, 12 October",
+    "price": "70",
+    "rating": 4.9,
+    "experience": "advanced",
+    "image": "https://yourimageurl.com/sam_wilson.png"
+  },
+  {
+    "_id": 17,
+    "name": "Dr. Natasha Romanoff",
+    "expertise": "Orthodontist",
+    "education": [
+      {
+        "institution": "Red Room Dental Academy",
+        "degree": "DDS",
+        "year": "2002 - 2006"
+      }
+    ],
+    "work_experience": [
+      {
+        "clinic": "Widow Smiles Orthodontics",
+        "years": "2007 - Present"
+      }
+    ],
+    "services": [
+      "Braces",
+      "Invisalign",
+      "Retainers"
+    ],
+    "awards": [
+      {
+        "title": "Best Orthodontist",
+        "date": "2019"
+      }
+    ],
+    "specializations": [
+      "Braces & Aligners",
+      "Smile Correction"
+    ],
+    "location": "Banani, Dhaka, Bangladesh",
+    "available_on": "Tue, 10 October",
+    "price": "60",
+    "rating": 4.7,
+    "experience": "expert",
+    "image": "https://plus.unsplash.com/premium_photo-1658506671316-0b293df7c72b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "_id": 18,
+    "name": "Dr. Clint Barton",
+    "expertise": "Endodontist",
+    "education": [
+      {
+        "institution": "Hawkeye Dental School",
+        "degree": "DDS",
+        "year": "1995 - 1999"
+      }
+    ],
+    "work_experience": [
+      {
+        "clinic": "Bullseye Endodontics",
+        "years": "2000 - Present"
+      }
+    ],
+    "services": [
+      "Root Canal Therapy",
+      "Endodontic Surgery",
+      "Apicoectomy"
+    ],
+    "awards": [
+      {
+        "title": "Top Endodontist",
+        "date": "2017"
+      }
+    ],
+    "specializations": [
+      "Endodontic Surgery",
+      "Root Canals"
+    ],
+    "location": "Gulshan, Dhaka, Bangladesh",
+    "available_on": "Wed, 11 October",
+    "price": "80",
+    "rating": 4.8,
+    "experience": "advanced",
+    "image": "https://yourimageurl.com/clint_barton.png"
+  },
+  {
+    "_id": 19,
+    "name": "Dr. Bruce Banner",
+    "expertise": "Periodontist",
+    "education": [
+      {
+        "institution": "Gamma University School of Dentistry",
+        "degree": "DDS",
+        "year": "2001 - 2005"
+      }
+    ],
+    "work_experience": [
+      {
+        "clinic": "Green Smile Periodontics",
+        "years": "2006 - Present"
+      }
+    ],
+    "services": [
+      "Gum Disease Treatment",
+      "Dental Implants",
+      "Bone Grafting"
+    ],
+    "awards": [
+      {
+        "title": "Best Periodontist",
+        "date": "2021"
+      }
+    ],
+    "specializations": [
+      "Periodontal Disease",
+      "Implant Dentistry"
+    ],
+    "location": "Uttara, Dhaka, Bangladesh",
+    "available_on": "Fri, 13 October",
+    "price": "65",
+    "rating": 4.7,
+    "experience": "advanced",
+    "image": "https://yourimageurl.com/bruce_banner.png"
+  },
+  {
+    "_id": 20,
+    "name": "Dr. Tony Stark",
+    "expertise": "Prosthodontist",
+    "education": [
+      {
+        "institution": "Stark Industries Dental School",
+        "degree": "DDS",
+        "year": "1998 - 2002"
+      }
+    ],
+    "work_experience": [
+      {
+        "clinic": "Stark Smiles Prosthodontics",
+        "years": "2003 - Present"
+      }
+    ],
+    "services": [
+      "Dental Implants",
+      "Crowns and Bridges",
+      "Full Mouth Rehabilitation"
+    ],
+    "awards": [
+      {
+        "title": "Top Prosthodontist",
+        "date": "2019"
+      }
+    ],
+    "specializations": [
+      "Implantology",
+      "Prosthetic Dentistry"
+    ],
+    "location": "Banani, Dhaka, Bangladesh",
+    "available_on": "Tue, 10 October",
+    "price": "85",
+    "rating": 5.0,
+    "experience": "advanced",
+    "image": "https://yourimageurl.com/tony_stark.png"
+  }
+]
