@@ -4,6 +4,7 @@ import Main from "../Components/Layout/Main";
 import DoctorProfile from "../Pages/Doctor Profile/DoctorProfile";
 import SignUP from "../Pages/SignUp/SignUP";
 import Login from "../Pages/Login/Login";
+import Appointment from "../Pages/Appointment/Appointment/Appointment";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "/appointment",
+        element: <Appointment></Appointment>,
       },
       {
         path: "/docsprofile",

@@ -1,13 +1,11 @@
 import { useState } from "react";
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-
 const DatePicking = ({ setValue, name }) => {
   const [startDate, setStartDate] = useState(null);
 
   const handleDateChange = (date) => {
     setStartDate(date);
-    setValue(name, date); // Register the date value with react-hook-form
+    setValue(name, date);
     console.log("Selected date:", date);
   };
 
