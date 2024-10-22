@@ -3,11 +3,22 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { CiLocationOn } from "react-icons/ci";
 import DatePicking from "../../../Components/DatePicker/DatePicking";
 import TimePicking from "../../../Components/DatePicker/TimePicking";
+import toast from "react-hot-toast";
 
 function Contact() {
-  const { register, handleSubmit, setValue, formState: { errors } } = useForm();
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    formState: { errors },
+    reset,
+  } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    toast.success("Successfully toasted!");
+    console.log(data);
+    reset();
+  };
 
   return (
     <div className="bg-[#07332F] card mx-2 p-4 md:p-[100px] mt-28 flex flex-col md:flex-row items-center justify-between gap-4">
@@ -18,18 +29,21 @@ function Contact() {
           accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
           ab illo inventore veritatis et quasi.
         </p>
-        <ContactInfo 
-          icon={<FaPhoneAlt size={18} color="#ffd700" />} 
-          text="+88 01750 14 14 14" 
+        <ContactInfo
+          icon={<FaPhoneAlt size={18} color="#ffd700" />}
+          text="+88 01750 14 14 14"
         />
         <div className="h-[2px] my-2 bg-[#F7A582] block md:hidden"></div>
-        <ContactInfo 
-          icon={<CiLocationOn size={18} color="#ffd700" />} 
-          text="Dhanmondi, Dhaka, Bangladesh" 
+        <ContactInfo
+          icon={<CiLocationOn size={18} color="#ffd700" />}
+          text="Dhanmondi, Dhaka, Bangladesh"
         />
       </div>
-      
-      <form className="md:grid flex flex-col md:grid-cols-2 gap-2 text-white" onSubmit={handleSubmit(onSubmit)}>
+
+      <form
+        className="md:grid flex flex-col md:grid-cols-2 gap-2 text-white"
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <InputField
           type="text"
           placeholder="Name"
@@ -55,18 +69,18 @@ function Contact() {
           error={errors.doctorName}
         />
         <label>
-          <DatePicking
-            setValue={setValue}
-            name="datepick"
-          />
+          <DatePicking setValue={setValue} name="datepick" />
           {errors.datepick && <ErrorMessage message="Please select Date" />}
         </label>
         <label>
           <TimePicking />
         </label>
-        <input className="col-span-2 btn bg-[#F7A582] border-none" type="submit" />
+        <input
+          className="col-span-2 btn bg-[#F7A582] border-none"
+          type="submit"
+        />
       </form>
-    </div> 
+    </div>
   );
 }
 

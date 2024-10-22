@@ -5,6 +5,7 @@ import DoctorProfile from "../Pages/Doctor Profile/DoctorProfile";
 import SignUP from "../Pages/SignUp/SignUP";
 import Login from "../Pages/Login/Login";
 import Appointment from "../Pages/Appointment/Appointment/Appointment";
+import Service from "../Pages/Service/Service";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "/services",
+        element: <Service></Service>,
       },
       {
         path: "/appointment",
@@ -30,7 +35,7 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
-      }
+      },
     ],
   },
 ]);

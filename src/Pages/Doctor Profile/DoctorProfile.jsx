@@ -10,6 +10,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "../Home/Review/reviewStyle.css";
 import Review from "../Home/Review/Review";
+import axios from "axios";
 
 function DoctorProfile() {
   const [activeTab, setActiveTab] = useState(0);
@@ -19,7 +20,6 @@ function DoctorProfile() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [locationPage]);
-
   const {
     name,
     expertise,
@@ -45,6 +45,26 @@ function DoctorProfile() {
     { id: 2, label: "Reviews" },
     { id: 3, label: "Available" },
   ];
+  const appointmentHandle = (doctor) => {
+    const { _id, available_on, name, expertise } = doctor;
+
+    const appointmentDetails = {
+      name,
+      services: expertise,
+      date: available_on,
+    };
+
+    axios
+      .post(`http://localhost:5000/appointment/${_id}`, appointmentDetails)
+      .then((res) => {
+        console.log("Appointment created:", res.data);
+      })
+      .catch((error) => {
+        console.error("Failed to create appointment:", error);
+      });
+
+    console.log(_id, available_on, name, expertise);
+  };
 
   return (
     <div>
@@ -83,6 +103,12 @@ function DoctorProfile() {
                   <ImCoinDollar size={20} />
                   <span className="ml-2">${price}</span>
                 </div>
+                <button
+                  onClick={() => appointmentHandle(doctor)}
+                  className="btn btn-xl border-2 border-[#F7A582]"
+                >
+                  Appointment
+                </button>
               </div>
             </div>
           </div>

@@ -5,10 +5,13 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { IoEyeSharp } from "react-icons/io5";
 import { FaEyeSlash } from "react-icons/fa";
+import useAuth from "../../hooks/useAuth";
 function SignUP() {
   const [showPassword, setShowPassword] = useState(false);
- const navigate =  useNavigate()
+  const { createUser } = useAuth();
+  const navigate = useNavigate();
   const onSubmit = (data) => {
+    createUser(data.email, data.password);
     if (isSubmitSuccessful) {
       console.log(data);
       navigate("/login");
@@ -32,22 +35,6 @@ function SignUP() {
         <div className="max-w-md mx-auto p-4 border rounded shadow">
           <h2 className="text-xl font-bold mb-4 text-white">Sign Up</h2>
           <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
-            <div className="form-control mb-3">
-              <input
-                {...register("profilepic", {
-                  required: true,
-                })}
-                type="text"
-                placeholder="image url"
-                className={`input input-bordered ${
-                  errors.email ? "input-error" : ""
-                }`}
-                // required
-
-                //TODO: make it requird
-              />
-              {errors.email && <ErrorMessage message={errors.email.message} />}
-            </div>
             {/* Username Input */}
             <div className="form-control mb-3">
               <input

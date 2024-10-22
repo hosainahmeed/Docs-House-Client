@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from '../../../../assets/Icon/logo.png'
+import logo from "../../../../assets/Icon/logo.png";
 import SmallButton from "../../../../Components/button/SmallButton";
 function Footer() {
   const Quick_Links = [
@@ -26,15 +26,14 @@ function Footer() {
       <footer className="footer footer-center text-base-content px-2 py-12 md:p-12">
         <div className="footer bg-base-200 text-base-content text-base p-10">
           <aside className="flex items-center  md:items-start gap-6 justify-center flex-col">
-            <img  src={logo} alt="" />
+            <img src={logo} alt="" />
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. has been since the printer took.
             </p>
-            <SmallButton
-            color='#F7A582'
-            value='Appointment'
-            ></SmallButton>
+            <Link to='/appointment'>
+              <SmallButton color="#F7A582" value="Appointment"></SmallButton>
+            </Link>
           </aside>
           <nav className="flex items-center md:items-start justify-center flex-col">
             <h6 className="footer-title">Quick Links</h6>

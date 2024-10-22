@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -8,64 +7,64 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { FaQuoteLeft } from "react-icons/fa6";
 import ReactStars from "react-rating-stars-component";
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import { useQuery } from "@tanstack/react-query";
+import { Card, Skeleton } from "@nextui-org/react";
+
 function Review() {
-  const progressCircle = useRef(null);
-  const progressContent = useRef(null);
-  const [reviewsData, setReviewsData] = useState([]);
+  const [axiosPublic] = useAxiosPublic();
 
-  const onAutoplayTimeLeft = (s, time, progress) => {
-    if (progressCircle.current) {
-      progressCircle.current.style.setProperty("--progress", 1 - progress);
-    }
-    if (progressContent.current) {
-      progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
-    }
-  };
+  // Fetch the reviews data using TanStack Query
+  const { data: reviewsData = [], isLoading } = useQuery({
+    queryKey: ["reviews"],
+    queryFn: async () => {
+      const response = await axiosPublic.get("/reviews");
+      return response.data; // Ensure you return the data
+    },
+  });
 
-  // Fetch the reviews data
-  useEffect(() => {
-    fetch("/JSON/reviews.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setReviewsData(data);
-      });
-  }, []);
+
+  // Handle loading state
+  if (isLoading) {
+    return (
+      <Card className="w-[200px] space-y-5 p-4" radius="lg">
+        <Skeleton className="rounded-lg">
+          <div className="h-24 rounded-lg bg-default-300"></div>
+        </Skeleton>
+        <div className="space-y-3">
+          {Array.from({ length: 3 }).map((_, index) => (
+            <Skeleton key={index} className={`w-${index === 0 ? '3/5' : index === 1 ? '4/5' : '2/5'} rounded-lg`}>
+              <div className="h-3 bg-default-200"></div>
+            </Skeleton>
+          ))}
+        </div>
+      </Card>
+    );
+  }
 
   return (
     <div className="mt-12 md:mt-28">
-       <SectionTitle
-        heading="What Our Patients Says"
-        subHeading="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inve ntore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
-      ></SectionTitle>
+      <SectionTitle
+        heading="What Our Patients Say"
+        subHeading="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+      />
       <Swiper
         spaceBetween={30}
-        centeredSlides={false} // Disable centering for multiple slides
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
+        centeredSlides={false}
+        autoplay={{ delay: 2500, disableOnInteraction: false }}
+        pagination={{ clickable: true }}
+        navigation
         modules={[Autoplay, Pagination, Navigation]}
-        onAutoplayTimeLeft={onAutoplayTimeLeft}
         breakpoints={{
-          640: {
-            slidesPerView: 1, // Show 1 card on mobile
-            spaceBetween: 20,
-          },
-          1024: {
-            slidesPerView: 2, // Show 2 cards on desktop
-            spaceBetween: 30,
-          },
+          640: { slidesPerView: 1, spaceBetween: 20 },
+          1024: { slidesPerView: 2, spaceBetween: 30 },
         }}
         className="mySwiper"
       >
         {reviewsData.map((review) => (
           <SwiperSlide key={review._id}>
             <div className="flex items-start justify-around space-x-5 px-12 py-28">
-              <div className="review-card min-h-48  text-start">
+              <div className="review-card min-h-48 text-start">
                 <div className="flex items-start justify-between">
                   <div className="flex items-center gap-2">
                     <div className="avatar">
@@ -82,7 +81,7 @@ function Review() {
                       <p className="leading-4">{review.designation}</p>
                     </div>
                   </div>
-                  <FaQuoteLeft className="text-5xl md:block hidden"></FaQuoteLeft>
+                  <FaQuoteLeft className="text-5xl md:block hidden" />
                 </div>
                 <p>{review.review_text}</p>
                 <div className="flex items-center">

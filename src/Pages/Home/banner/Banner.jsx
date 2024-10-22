@@ -1,7 +1,13 @@
+import { Link, useNavigate } from "react-router-dom";
 import bannerImage from "../../../assets/Images/Banner/banner.png";
 import SmallButton from "../../../Components/button/SmallButton";
 
 function Banner() {
+const navigate = useNavigate()
+  const handleServiceBtn =()=>{
+    navigate('/appointment#service')
+  }
+
   return (
     <div className="hero bg-[#07332F] text-white px-3">
       <div className="flex items-center max-h-svh overflow-hidden max-w-screen-2xl flex-col md:flex-row">
@@ -14,9 +20,9 @@ function Banner() {
             personalized healthcare services. Our dedicated team ensures
             top-quality care with compassion and expertise.
           </p>
-          <SmallButton
-            value="All Service"
-          ></SmallButton>
+          <Link onClick={handleServiceBtn}>
+            <SmallButton  value="All Service"></SmallButton>
+          </Link>
         </div>
         <img src={bannerImage} className="opacity-80" />
       </div>

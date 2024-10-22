@@ -1,7 +1,9 @@
-// import "./index.css"
-import DateRangePicker from "./App"
+import { DateRangePicker } from "@nextui-org/react";
+
 
 function DatePicker(dates) {
+  const currentDate = new Date(); // Get today's date
+  
   console.log(`The range of dates that got picked is: ${dates.text}`);
   console.log(`The min date that got picked is: ${dates.minDate}`);
   console.log(`The max date that got picked is: ${dates.maxDate}`);
@@ -9,6 +11,11 @@ function DatePicker(dates) {
     `The number of days that got picked is: ${dates.numberOfDaysPicked}`
   );
   console.log(`All dates: ${dates.allDates}`);
+
+  // Callback function for date range picker
+  function callbackFunction(selectedDates) {
+    console.log("Selected dates:", selectedDates);
+  }
 
   return (
     <div>
@@ -20,8 +27,7 @@ function DatePicker(dates) {
         colorsPalette="enabled"
         format="DD-MM-YYYY"
         selectAllButton="disabled"
-        startDate={new Date(2000, 8, 21)}
-        endDate={new Date(2024, 9, 21)}
+        minDate={currentDate} // Disable past dates
         firstDayOfWeekIndex={0}
         pickMethod="date"
         defaultColor="#178905"
@@ -29,25 +35,30 @@ function DatePicker(dates) {
         boardsNum={1}
         callback={callbackFunction}
       />
+
       <div className="sub-title">Range picker (default values)</div>
-      <DateRangePicker callback={callbackFunction} />
+      <DateRangePicker
+        minDate={currentDate} // Disable past dates
+        callback={callbackFunction}
+      />
+
       <div className="sub-title">Multiple ranges picker</div>
       <DateRangePicker
         selectAllButton="enabled"
         pickMethod="ranges"
+        minDate={currentDate} // Disable past dates
         callback={callbackFunction}
       />
+
       <div className="sub-title">
-        Hebrew version (right to left). All features enabled with ranges pick
-        method
+        Hebrew version (right to left). All features enabled with ranges pick method
       </div>
       <DateRangePicker
         language="Hebrew"
         colorsPalette="enabled"
         format="DD-MM-YYYY"
         selectAllButton="enabled"
-        startDate={new Date(2000, 8, 21)}
-        endDate={new Date(2024, 9, 21)}
+        minDate={currentDate} // Disable past dates
         firstDayOfWeekIndex={0}
         pickMethod="ranges"
         defaultColor="#178905"

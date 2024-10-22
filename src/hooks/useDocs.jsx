@@ -1,16 +1,26 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from 'react';
+import useAxiosPublic from "./useAxiosPublic";
 
-function useDocs() {
-  let [doctorDetails, setDoctorsDetails] = useState([]);
+export default function useDocs() {
+  const [axiosPublic] = useAxiosPublic();
+  const [docsData, setDocsData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("/JSON/Doctors.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setDoctorsDetails(data);
-      });
-  }, []);
-  return doctorDetails;
-}
+    const fetchDocs = async () => {
+      try {
+        const response = await axiosPublic.get("/doctorsProfile");
+        setDocsData(response.data);
+      } catch (err) {
+        setError(err.message || 'An error occurred while fetching doctors data');
+      } finally {
+        setLoading(false);
+      }
+    };
 
-export default useDocs;
+    fetchDocs();
+  }, [axiosPublic]);
+
+  return { docsData, loading, error };
+}
