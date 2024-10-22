@@ -10,7 +10,7 @@ import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
 import { Card, Skeleton } from "@nextui-org/react";
-
+import notFound from '../../../assets/404/404.jpg'
 function Review() {
   const [axiosPublic] = useAxiosPublic();
 
@@ -41,6 +41,22 @@ function Review() {
       </Card>
     );
   }
+
+
+  if (!reviewsData || reviewsData.length === 0) {
+    // Show 404 image or message if no data is found
+    return (
+      <div className="flex flex-col items-center justify-center py-10">
+        <img
+          src={notFound}
+          alt="404 Not Found"
+          className="w-1/2 h-auto"
+        />
+        <p className="text-xl text-red-500 mt-5">No appointments found!</p>
+      </div>
+    );
+  }
+
 
   return (
     <div className="mt-12 md:mt-28">

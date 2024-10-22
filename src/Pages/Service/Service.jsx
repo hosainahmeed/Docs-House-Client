@@ -121,7 +121,6 @@ function Service() {
       }
       setIsAppointmentModalOpen(false);
     });
-    console.log("Booking Data:", bookingData);
   };
   return (
     <div>
