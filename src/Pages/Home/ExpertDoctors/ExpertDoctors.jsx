@@ -6,6 +6,7 @@ import { MdEventAvailable } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
+import { Card, Skeleton } from "@nextui-org/react";
 
 function ExpertDoctors() {
   // const doctorDetails = useDocs([]);
@@ -41,10 +42,22 @@ function ExpertDoctors() {
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error fetching data: {error.message}</div>;
+
   return (
     <>
       {isLoading ? (
-        <div>.....loading</div>
+          <Card className="w-[200px] space-y-5 p-4" radius="lg">
+            <Skeleton className="rounded-lg">
+              <div className="h-24 rounded-lg bg-default-300"></div>
+            </Skeleton>
+            <div className="space-y-3">
+              {Array.from({ length: 3 }).map((_, index) => (
+                <Skeleton key={index} className={`w-${index === 0 ? '3/5' : index === 1 ? '4/5' : '2/5'} rounded-lg`}>
+                  <div className="h-3 bg-default-200"></div>
+                </Skeleton>
+              ))}
+            </div>
+          </Card>
       ) : (
         <div className="mt-12 md:mt-28">
           <SectionTitle
