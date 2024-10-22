@@ -36,7 +36,7 @@ function Appointment() {
   });
 
   const deletePassAppointment = (id) => {
-    axios.delete(`https://docs-point-server-prrajnxiu-hosains-projects-1e2169e4.vercel.app/appointment/${id}`).then((res) => {
+    axios.delete(`https://docs-point-server-prrajnxiu-hosains-projects-1e2169e4.vercel.app/appointment/${id}`,{withCredentials:true}).then((res) => {
       console.log(res.data);
       refetch();
     });
