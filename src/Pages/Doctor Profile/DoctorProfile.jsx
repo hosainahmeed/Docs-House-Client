@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import PageHeader from "../../Components/Common/PageHeader";
 import ReactStars from "react-rating-stars-component";
 import { CiLocationOn } from "react-icons/ci";
@@ -11,12 +11,14 @@ import "swiper/css/navigation";
 import "../Home/Review/reviewStyle.css";
 import Review from "../Home/Review/Review";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 function DoctorProfile() {
   const [activeTab, setActiveTab] = useState(0);
   const { state } = useLocation();
   const doctor = state?.doctor;
   const locationPage = useLocation();
+  const navigate = useNavigate()
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [locationPage]);
@@ -45,26 +47,32 @@ function DoctorProfile() {
     { id: 2, label: "Reviews" },
     { id: 3, label: "Available" },
   ];
-  const appointmentHandle = (doctor) => {
-    const { _id, available_on, name, expertise } = doctor;
 
+  const appointmentHandle = async (doctor) => {
+    const { _id, available_on, name, expertise } = doctor;
+    console.log(doctor);
+    
     const appointmentDetails = {
       name,
       services: expertise,
       date: available_on,
     };
-
-    axios
-      .post(`http://localhost:5000/appointment/${_id}`, appointmentDetails)
-      .then((res) => {
-        console.log("Appointment created:", res.data);
-      })
-      .catch((error) => {
-        console.error("Failed to create appointment:", error);
-      });
-
-    console.log(_id, available_on, name, expertise);
+  
+    try {
+      const response = await axios.post(`http://localhost:5000/appointment/${_id}`, appointmentDetails);
+      if (response.data.insertedId) {
+        toast.success('successfully appointed')
+        navigate('/appointment')
+      }
+      
+    } catch (error) {
+      console.error("Failed to create appointment:", error);
+      toast.error('something is wrong or already appointed')
+    }
+  
+    console.log(_id, available_on, name, expertise); // Debugging purpose
   };
+  
 
   return (
     <div>

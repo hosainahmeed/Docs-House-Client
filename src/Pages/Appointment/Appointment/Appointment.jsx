@@ -7,7 +7,12 @@ import { FaDeleteLeft } from "react-icons/fa6";
 
 function Appointment() {
   const [isPast, setIsPast] = useState(false);
-  const { data: doctorData, isLoading,refetch } = useQuery({
+
+  const {
+    data: doctorData,
+    isLoading,
+    refetch,
+  } = useQuery({
     queryKey: ["doctor"],
     queryFn: async () => {
       const res = await axios.get("http://localhost:5000/appointment");
@@ -19,18 +24,21 @@ function Appointment() {
   }
   const appointmentData = doctorData.map((d) => d);
   appointmentData.map((data) => {
-    const today = new Date();
-    if (today > data?.date) {
+    const convertToDate = (dateStr) => {
+      const [month, day, year] = dateStr.split("/").map(Number);
+      return new Date(year, month - 1, day);
+    };
+    console.log(data.date);
+
+    if (convertToDate > data?.date) {
       setIsPast(true);
     }
   });
 
   const deletePassAppointment = (id) => {
-    console.log(id);
-    
     axios.delete(`http://localhost:5000/appointment/${id}`).then((res) => {
       console.log(res.data);
-      refetch()
+      refetch();
     });
   };
   return (
@@ -61,7 +69,7 @@ function Appointment() {
               >
                 <tr
                   className={`${
-                    isPast ? "" : "bg-red-500 animate-pulse"
+                    isPast ? "bg-red-500 animate-pulse" : ""
                   } border-black`}
                 >
                   <th>{index + 1}</th>

@@ -13,6 +13,9 @@ import { useLocation } from "react-router-dom";
 import { FaArrowDown } from "react-icons/fa";
 import PageHeader from "../../Components/Common/PageHeader";
 import useDocs from "../../hooks/useDocs";
+import axios from "axios";
+import useAuth from "../../hooks/useAuth";
+import toast from "react-hot-toast";
 
 function Service() {
   const locationPage = useLocation();
@@ -31,6 +34,8 @@ function Service() {
     return date > new Date().setHours(0, 0, 0, 0);
   };
 
+  const { users } = useAuth();
+
   const { docsData } = useDocs();
 
   const docsExpertise = docsData.map((doc) => doc.expertise);
@@ -39,8 +44,6 @@ function Service() {
   );
 
   const evilable = docsExpertise.includes(selectedService?.label);
-  console.log(docsExpertiseFilter);
-  console.log(evilable);
 
   const handleDateChange = (date) => {
     setStartDate(date);
@@ -102,16 +105,23 @@ function Service() {
 
   const onSubmit = (formData) => {
     const bookingData = {
-      appointmentDate: startDate.toLocaleDateString(),
-      appointmentTime: selectedSchedule,
-      email: formData.email,
-      fullName: formData.fullName,
-      phoneNumber: formData.phoneNumber,
-      service: selectedService?.label,
+      date: startDate.toLocaleDateString(),
+      time: selectedSchedule,
+      email: formData?.email,
+      name: formData.fullName,
+      phoneNumber: formData?.phoneNumber,
+      services: selectedService.label,
     };
+    // console.log(formData);
 
+    axios.post("http://localhost:5000/appointment", bookingData).then((res) => {
+      console.log(res.data);
+      if (res.data.insertedId) {
+        toast.success("successfully appointed");
+      }
+      setIsAppointmentModalOpen(false);
+    });
     console.log("Booking Data:", bookingData);
-    setIsAppointmentModalOpen(false);
   };
   return (
     <div>
@@ -235,10 +245,7 @@ function Service() {
               </div>
 
               <div className="form-control w-full">
-                <select
-                  className="select select-bordered w-full"
-                  {...register("docName", { required: true })}
-                >
+                <select className="select select-bordered w-full">
                   <option value="">Select a Doctor</option>
                   {docsData &&
                     docsData
@@ -253,14 +260,12 @@ function Service() {
                         </option>
                       ))}
                 </select>
-                {errors.docName && (
-                  <span className="text-red-500">Please select a doctor</span>
-                )}
               </div>
 
               <div className="form-control w-full">
                 <input
                   type="text"
+                  defaultValue={users?.displayName}
                   placeholder="Full Name"
                   className="input input-bordered"
                   {...register("fullName", { required: true })}
@@ -283,6 +288,7 @@ function Service() {
               <div className="form-control w-full">
                 <input
                   type="email"
+                  defaultValue={users?.email}
                   placeholder="Email"
                   className="input input-bordered"
                   {...register("email", { required: true })}
@@ -332,9 +338,3 @@ const Modal = ({ onClose, children }) => {
   );
 };
 export default Service;
-
-
-
-
-
-

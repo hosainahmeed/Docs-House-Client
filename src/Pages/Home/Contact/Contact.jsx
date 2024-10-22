@@ -15,7 +15,7 @@ function Contact() {
   } = useForm();
 
   const onSubmit = (data) => {
-    toast.success("Successfully toasted!");
+    toast.success("Successfully Message Send");
     console.log(data);
     reset();
   };

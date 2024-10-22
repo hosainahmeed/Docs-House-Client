@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../../../../assets/Icon/logo.png";
 import SmallButton from "../../../../Components/button/SmallButton";
 function Footer() {
@@ -20,6 +20,8 @@ function Footer() {
     "Personal Counseling",
     "Dental Clinic",
   ];
+  const location = useLocation()
+  const appoint = location.pathname !== '/appointment'
 
   return (
     <div className="bg-[#F3F3F3] mt-12 md:mt-28">
@@ -31,8 +33,8 @@ function Footer() {
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. has been since the printer took.
             </p>
-            <Link to='/appointment'>
-              <SmallButton color="#F7A582" value="Appointment"></SmallButton>
+            <Link to={appoint? '/appointment':'/'}>
+              <SmallButton color="#F7A582" value={appoint? "Appointment": "Home"}></SmallButton>
             </Link>
           </aside>
           <nav className="flex items-center md:items-start justify-center flex-col">

@@ -13,7 +13,7 @@ function Login() {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitSuccessful },
+    formState: { errors },
   } = useForm();
   const { signInUser } = useAuth();
   const onSubmit = (data) => {
@@ -100,11 +100,6 @@ function Login() {
               </small>
             </p>
             {/* Success Message */}
-            {isSubmitSuccessful && (
-              <span className="text-green-500 mt-4">
-                Registration successful!
-              </span>
-            )}
           </form>
         </div>
       </div>

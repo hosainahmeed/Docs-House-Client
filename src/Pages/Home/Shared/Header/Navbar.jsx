@@ -9,7 +9,7 @@ import useAuth from "../../../../hooks/useAuth";
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { users, signOutUser } = useAuth();
-  console.log(users);
+  // console.log(users);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
