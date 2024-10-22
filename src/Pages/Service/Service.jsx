@@ -113,8 +113,8 @@ function Service() {
       services: selectedService.label,
     };
     // console.log(formData);
-
-    axios.post("https://docs-point-server-prrajnxiu-hosains-projects-1e2169e4.vercel.app/appointment", bookingData,{withCredentials:true}).then((res) => {
+    
+    axios.post("https://docs-point-server-fgl332fep-hosains-projects-1e2169e4.vercel.app/appointment", bookingData,{withCredentials:true}).then((res) => {
       console.log(res.data);
       if (res.data.insertedId) {
         toast.success("successfully appointed");
