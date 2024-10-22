@@ -59,7 +59,7 @@ function DoctorProfile() {
     };
   
     try {
-      const response = await axios.post(`http://localhost:5000/appointment/${_id}`, appointmentDetails);
+      const response = await axios.post(`https://docs-point-server-prrajnxiu-hosains-projects-1e2169e4.vercel.app/appointment/${_id}`, appointmentDetails);
       if (response.data.insertedId) {
         toast.success('successfully appointed')
         navigate('/appointment')

@@ -15,7 +15,7 @@ function Appointment() {
   } = useQuery({
     queryKey: ["doctor"],
     queryFn: async () => {
-      const res = await axios.get("http://localhost:5000/appointment");
+      const res = await axios.get("https://docs-point-server-prrajnxiu-hosains-projects-1e2169e4.vercel.app/appointment");
       return res.data;
     },
   });
@@ -36,7 +36,7 @@ function Appointment() {
   });
 
   const deletePassAppointment = (id) => {
-    axios.delete(`http://localhost:5000/appointment/${id}`).then((res) => {
+    axios.delete(`https://docs-point-server-prrajnxiu-hosains-projects-1e2169e4.vercel.app/appointment/${id}`).then((res) => {
       console.log(res.data);
       refetch();
     });
